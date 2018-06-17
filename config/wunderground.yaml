@@ -1,0 +1,56 @@
+config:
+  myhome/weather/dew_point:
+    factor: 555.5555
+    offset: 32
+    update period: 0
+    wu_field: dewptf
+  myhome/weather/humidity:
+    factor: 1000
+    update period: 0
+    wu_field: humidity
+  myhome/weather/pressure:
+    factor: 33863.88667
+    update period: 0
+    wu_field: baromin
+  myhome/weather/rain_day_curr:
+    factor: 25400
+    update period: 0
+    wu_field: dailyrainin
+  myhome/weather/rain_hour_curr:
+    factor: 25400
+    update period: 0
+    wu_field: rainin
+  myhome/weather/temperature:
+    factor: 555.5555
+    offset: 32
+    update period: 0
+    wu_field: tempf
+  myhome/weather/wind_direction:
+    factor: 1000
+    update period: 0
+    wu_field: winddir
+  myhome/weather/wind_direction_2m:
+    factor: 25400
+    update period: 0
+    wu_field: winddir_avg2m
+  myhome/weather/wind_direction_gust_10m:
+    factor: 1000
+    update period: 0
+    wu_field: windgustdir
+  myhome/weather/wind_speed:
+    factor: 1000
+    update period: 0
+    wu_field: windspeedmph
+  myhome/weather/wind_speed_2m:
+    factor: 1000
+    update period: 0
+    wu_field: windspdmph_avg2m
+  myhome/weather/wind_speed_gust_10m:
+    factor: 1000
+    update period: 0
+    wu_field: windgustmph
+  myhome/pool/uv_index:
+    factor: 100
+    update period: 0
+    wu_field: UV
+url: https://rtupdate.wunderground.com/weatherstation/updateweatherstation.php

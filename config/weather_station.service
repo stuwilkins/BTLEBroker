@@ -8,6 +8,7 @@ Type=simple
 ExecStart=/usr/local/bin/mqtt_broker  --config /etc/BTLEBroker/bluetooth_setup.yaml --name "Weather Station" --auth /etc/BTLEBroker/auth.yaml
 RestartSec=120
 Restart=always
+StandardOutput=null
  
 [Install]
 WantedBy=multi-user.target

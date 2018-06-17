@@ -83,78 +83,58 @@ devices:
         factor: 1000
         type: '>i'
         update period: 600
-        time offset: 14400
     myhome/pool/humidity:
         ev_name: 'air_humidity'
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-        time offset: 14400
-
     myhome/pool/air_temp:
         ev_name: air_temp
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-        time offset: 14400
-        
     myhome/pool/error_status:
         ev_name: error_status
         ev_collection: 'Home_Temp_Logging'
         type: B
         update period: 600
-        time offset: 14400
-                  
     myhome/pool/ir_light:
         ev_name: ir_light
         ev_collection: 'Home_Temp_Logging'
         type: '>h'
         update period: 600
-        time offset: 14400
-        
     myhome/pool/water_temp:
         ev_name: pool_water_temp
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-        time offset: 14400
-        
     myhome/pool/pump_speed:
         ev_name: pump_speed
         ev_collection: 'Home_Temp_Logging'
         type: '>h'
         update period: 600
-        time offset: 14400
-        
     myhome/pool/uv_index:
         ev_name: UV_index
         ev_collection: 'Home_Temp_Logging'
         factor: 100
         type: '>h'
         update period: 600
-        time offset: 14400
-        
     myhome/pool/visible_light:
         ev_name: visible_light
         ev_collection: 'Home_Temp_Logging'
         type: '>h'
         update period: 600
-        time offset: 14400
-        
     myhome/pool/flow_switch:
         ev_name: flow
         ev_collection: 'Home_Temp_Logging'
         type: B
         update period: 600
-        time offset: 14400
-        
     myhome/pool/water_level:
         ev_name: water_level
         ev_collection: 'Home_Temp_Logging'
         factor: 100000
         type: '>i'
         update period: 600
-        time offset: 14400

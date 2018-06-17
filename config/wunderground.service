@@ -1,0 +1,14 @@
+[Unit]
+Description=Weather Undergound Upload Daemon
+After=network.target
+Requires=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/wunderground --config /etc/BTLEBroker/wunderground.yaml --auth /etc/BTLEBroker/auth.yaml
+RestartSec=120
+Restart=always
+StandardOutput=null
+ 
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+#!/bin/python
+from optparse import OptionParser
+from BTLEBroker import settime
+from BTLEBroker import config
+
+parser = OptionParser()
+parser.add_option("-m", "--mac", dest="ctrl_mac",
+                  help="Controller MAC address", metavar="MAC ADDRESS")
+
+if __name__ == "__main__":
+    (options, args) = parser.parse_args()
+    settime.settime(options.ctrl_mac)
