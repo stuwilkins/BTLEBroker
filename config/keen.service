@@ -1,0 +1,12 @@
+[Unit]
+Description=MQTT to Keen.IO bridge
+After=network.target
+Requires=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/keen_broker  --config /etc/BTLEBroker/keen_setup.yaml --auth /etc/BTLEBroker/auth.yaml
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=Pool Controller MQTT broker
+After=network.target
+Requires=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mqtt_broker  --config /etc/BTLEBroker/bluetooth_setup.yaml --name "Pool Controller" --auth /etc/BTLEBroker/auth.yaml
+RestartSec=120
+Restart=always
+ 
+[Install]
+WantedBy=multi-user.target
