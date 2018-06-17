@@ -69,61 +69,31 @@ clients:
                 characteristics:
                     Air Humidity:
                         UUID: 00001003-0000-1000-8000-00805f9b34fb
-                        ev_name: air_humidity
-                        factor: 1000
                         mqtt_topic: 'myhome/pool/humidity'
-                        type: '>i'
                     Air Temperature:
                         UUID: 00001002-0000-1000-8000-00805f9b34fb
-                        ev_name: air_temp
-                        factor: 1000
-                        type: '>i'
                         mqtt_topic: 'myhome/pool/air_temp'
                     Error Status:
                         UUID: 00001012-0000-1000-8000-00805f9b34fb
-                        ev_name: error_status
-                        factor: 1
-                        type: B
                         mqtt_topic: 'myhome/pool/error_status'
                     IR Light Intensity:
                         UUID: 00001008-0000-1000-8000-00805f9b34fb
-                        ev_name: ir_light
                         mqtt_topic: 'myhome/pool/ir_light'
-                        factor: 1
-                        type: '>h'
                     Pool Water Temp:
                         UUID: 00001001-0000-1000-8000-00805f9b34fb
-                        ev_name: pool_water_temp
-                        factor: 1000
                         mqtt_topic: 'myhome/pool/water_temp'
-                        type: '>i'
                     Pump Speed:
                         UUID: 00001010-0000-1000-8000-00805f9b34fb
-                        ev_name: pump_speed
-                        factor: 1
-                        type: '>h'
                         mqtt_topic: 'myhome/pool/pump_speed'
                     UV Index:
                         UUID: 00001006-0000-1000-8000-00805f9b34fb
-                        ev_name: UV_index
                         mqtt_topic: 'myhome/pool/uv_index'
-                        factor: 100
-                        type: '>h'
                     Visible Light Intensity:
                         UUID: 00001007-0000-1000-8000-00805f9b34fb
-                        ev_name: visible_light
                         mqtt_topic: 'myhome/pool/visible_light'
-                        factor: 1
-                        type: '>h'
                     Water Flow Sensor:
                         UUID: 00001004-0000-1000-8000-00805f9b34fb
-                        ev_name: flow
                         mqtt_topic: 'myhome/pool/flow_switch'
-                        factor: 1
-                        type: B
                     Water Level:
                         UUID: 00001005-0000-1000-8000-00805f9b34fb
-                        ev_name: water_level
                         mqtt_topic: 'myhome/pool/water_level'
-                        factor: 1000
-                        type: '>i'
