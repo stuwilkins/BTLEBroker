@@ -1,0 +1,13 @@
+wunderground:
+    ID: NULL
+    PASSWORD: NULL
+
+mqtt:
+    host: NULL
+    port: 1883
+
+keen.io:
+    project_id: NULL
+    write_key: NULL
+    read_key: NULL
+
