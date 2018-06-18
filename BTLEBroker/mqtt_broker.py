@@ -32,28 +32,40 @@ def enable_notify(periferal, service_uuid, char_uuid):
                                   withResponse=True)
     return ch
 
-
 def on_message(client, userdata, msg):
-    print(msg.topic+" "+str(msg.payload))
+    cfg = userdata['write']
+    for svname, service in cfg.items():
+        for chname, ch in service['characteristics'].items():
+            if(ch['mqtt_topic'] == msg.topic):
+                if 'write_char' in ch:
+                    ch['write_char'].write(msg.payload)
+                    print('Wrote {} to {} from {}'.format(
+                        msg.payload, ch['write_char'], msg.topic))
 
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    client.subscribe('myhome/pool/pump_speed_sp')
+
+    for svname, service in userdata['write'].items():
+        for chname, ch in service['characteristics'].items():
+            client.subscribe(ch['mqtt_topic'])
+            print("Subscribing to {}".format(ch['mqtt_topic']))
 
 
-def setup_mqtt(config):
-    mqtt_client = mqtt.Client('mqtt_publisher_{}'.format(os.getpid()))
+def setup_mqtt(config, name):
+    mqtt_client = mqtt.Client('mqtt_publisher_{}'.format(os.getpid()),
+                              userdata=config['clients'][name])
     mqtt_client.on_message = on_message
     mqtt_client.on_connect = on_connect
-    mqtt_client.connect(config['host'],
-                        config['port'])
+    mqtt_client.connect(config['mqtt']['host'],
+                        config['mqtt']['port'])
     return mqtt_client
 
 
 def _connect(cfg, mqtt_client):
     address = cfg['address']
-    services = cfg['services']
+    read_services = cfg['read']
+    write_services = cfg['write']
 
     try:
         print('Attempting to connect to host {}'.format(address))
@@ -65,7 +77,7 @@ def _connect(cfg, mqtt_client):
     print("Connected to {}".format(address))
 
     chars_dict = dict()
-    for svname, service in services.items():
+    for svname, service in read_services.items():
         for chname, ch in service['characteristics'].items():
             chdev = enable_notify(p, service['UUID'], ch['UUID'])
             print('Notification enabled on {} '
@@ -74,8 +86,18 @@ def _connect(cfg, mqtt_client):
             print('Characteristic {} on service {} is registered as name \''
                   '{}\''.format(ch['UUID'], service['UUID'], ch['mqtt_topic']))
 
-    p.setDelegate(BTLEDelegate(chars_dict, mqtt_client, True))
 
+    for svname, service in write_services.items():
+        service_handle = p.getServiceByUUID(service['UUID'])
+        for chname, ch in service['characteristics'].items():
+            write_char = service_handle.getCharacteristics(ch['UUID'])
+            ch['write_char'] = write_char[0]
+            print('Characteristic {} on service write enabled on {}'.format(
+                ch['UUID'], service['UUID'], ch['mqtt_topic']))
+
+
+    p.setDelegate(BTLEDelegate(chars_dict, mqtt_client, True))
+    cfg['periferal'] = p
     return p
 
 
@@ -102,7 +124,7 @@ def poll(client, mqtt_client):
 
 
 def main(config, name):
-    mqtt_client = setup_mqtt(config['mqtt'])
+    mqtt_client = setup_mqtt(config, name)
     while True:
         client = connect(config, mqtt_client, name)
         if client is None:

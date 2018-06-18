@@ -2,69 +2,68 @@ poll_period : 600
 clients:
     Weather Station:
         address: 'cc:b4:c5:57:a6:99'
-        services:
-            Weather:
-                UUID: 5a9049c1-9815-454d-a674-c48cd0275582
-                characteristics:
-                    Battery:
-                        UUID: 00001001-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/battery'
-                    Temperature:
-                        UUID: 00001002-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/temperature'
-                    Humidity:
-                        UUID: 00001003-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/humidity'
-                    Pressure:
-                        UUID: 00001004-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/pressure'
-                    Vis Light:
-                        UUID: 00001005-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/vis_light'
-                    IR Light:
-                        UUID: 00001006-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/ir_light'
-                    UV Index:
-                        UUID: 00001007-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/uv_index'
-                    Wind Speed:
-                        UUID: 00001008-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/wind_speed'
-                    Wind Direction:
-                        UUID: 00001009-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/wind_direction'
-                    Rain Hour:
-                        UUID: 00001013-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/rain_hour'
-                    Rain Day:
-                        UUID: 00001014-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/rain_day'
-                    Rain Hour Curr:
-                        UUID: 00001010-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/rain_hour_curr'
-                    Rain Day Curr:
-                        UUID: 00001011-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/rain_day_curr'
-                    Dew Point:
-                        UUID: 00001015-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/dew_point'
-                    Wind Speed 2m:
-                        UUID: 00001016-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/wind_speed_2m'
-                    Wind Direction 2m:
-                        UUID: 00001017-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/wind_direction_2m'
-                    Wind Speed 10m gust:
-                        UUID: 00001018-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/wind_speed_gust_10m'
-                    Wind Direction 10m gust:
-                        UUID: 00001019-0000-1000-8000-00805f9b34fb
-                        mqtt_topic: 'myhome/weather/wind_direction_gust_10m'
+        read:
+            UUID: 5a9049c1-9815-454d-a674-c48cd0275582
+            characteristics:
+                Battery:
+                    UUID: 00001001-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/battery'
+                Temperature:
+                    UUID: 00001002-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/temperature'
+                Humidity:
+                    UUID: 00001003-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/humidity'
+                Pressure:
+                    UUID: 00001004-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/pressure'
+                Vis Light:
+                    UUID: 00001005-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/vis_light'
+                IR Light:
+                    UUID: 00001006-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/ir_light'
+                UV Index:
+                    UUID: 00001007-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/uv_index'
+                Wind Speed:
+                    UUID: 00001008-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/wind_speed'
+                Wind Direction:
+                    UUID: 00001009-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/wind_direction'
+                Rain Hour:
+                    UUID: 00001013-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/rain_hour'
+                Rain Day:
+                    UUID: 00001014-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/rain_day'
+                Rain Hour Curr:
+                    UUID: 00001010-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/rain_hour_curr'
+                Rain Day Curr:
+                    UUID: 00001011-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/rain_day_curr'
+                Dew Point:
+                    UUID: 00001015-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/dew_point'
+                Wind Speed 2m:
+                    UUID: 00001016-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/wind_speed_2m'
+                Wind Direction 2m:
+                    UUID: 00001017-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/wind_direction_2m'
+                Wind Speed 10m gust:
+                    UUID: 00001018-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/wind_speed_gust_10m'
+                Wind Direction 10m gust:
+                    UUID: 00001019-0000-1000-8000-00805f9b34fb
+                    mqtt_topic: 'myhome/weather/wind_direction_gust_10m'
 
     Pool Controller:
         address: 'C1:49:4B:B4:61:17'
-        services:
-            Pool Monitoring:
+        read:
+            services:
                 UUID: 036451ed-6956-41ae-9840-5aca6c150ec7
                 characteristics:
                     Air Humidity:
@@ -97,3 +96,11 @@ clients:
                     Water Level:
                         UUID: 00001005-0000-1000-8000-00805f9b34fb
                         mqtt_topic: 'myhome/pool/water_level'
+        write:
+            services:
+                UUID: 036451ed-6956-41ae-9840-5aca6c150ec7
+                characteristics:
+                    Pump Speed:
+                        UUID: 00001011-0000-1000-8000-00805f9b34fb 
+                        mqtt_topic: 'myhome/pool/pump_speed_ctrl'
+
