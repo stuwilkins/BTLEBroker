@@ -46,10 +46,11 @@ def on_message(client, userdata, msg):
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code "+str(rc))
 
-    for svname, service in userdata['write'].items():
-        for chname, ch in service['characteristics'].items():
-            client.subscribe(ch['mqtt_topic'])
-            print("Subscribing to {}".format(ch['mqtt_topic']))
+    if 'write' in userdata:
+        for svname, service in userdata['write'].items():
+            for chname, ch in service['characteristics'].items():
+                client.subscribe(ch['mqtt_topic'])
+                print("Subscribing to {}".format(ch['mqtt_topic']))
 
 
 def setup_mqtt(config, name):
@@ -65,7 +66,7 @@ def setup_mqtt(config, name):
 def _connect(cfg, mqtt_client):
     address = cfg['address']
     read_services = cfg['read']
-    write_services = cfg['write']
+    write_services = cfg.get('write', None)
 
     try:
         print('Attempting to connect to host {}'.format(address))
@@ -86,15 +87,14 @@ def _connect(cfg, mqtt_client):
             print('Characteristic {} on service {} is registered as name \''
                   '{}\''.format(ch['UUID'], service['UUID'], ch['mqtt_topic']))
 
-
-    for svname, service in write_services.items():
-        service_handle = p.getServiceByUUID(service['UUID'])
-        for chname, ch in service['characteristics'].items():
-            write_char = service_handle.getCharacteristics(ch['UUID'])
-            ch['write_char'] = write_char[0]
-            print('Characteristic {} on service write enabled on {}'.format(
-                ch['UUID'], service['UUID'], ch['mqtt_topic']))
-
+    if write_services is not None:
+        for svname, service in write_services.items():
+            service_handle = p.getServiceByUUID(service['UUID'])
+            for chname, ch in service['characteristics'].items():
+                write_char = service_handle.getCharacteristics(ch['UUID'])
+                ch['write_char'] = write_char[0]
+                print('Characteristic {} on service write enabled on {}'.format(
+                    ch['UUID'], service['UUID'], ch['mqtt_topic']))
 
     p.setDelegate(BTLEDelegate(chars_dict, mqtt_client, True))
     cfg['periferal'] = p
