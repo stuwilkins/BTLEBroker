@@ -1,0 +1,13 @@
+[Unit]
+Description=MQTT to Adafruit IO Bridge
+After=network.target
+Requires=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/adafruit_broker  --config /etc/BTLEBroker/adafruit_setup.yaml --auth /etc/BTLEBroker/auth.yaml
+Restart=always
+StandardOutput=null
+ 
+[Install]
+WantedBy=multi-user.target

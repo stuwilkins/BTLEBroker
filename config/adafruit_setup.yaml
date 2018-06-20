@@ -1,0 +1,92 @@
+devices:
+    myhome/weather/battery:
+        topic: stuwilkins/feeds/weather.battery
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/temperature:
+        topic: stuwilkins/feeds/weather.temperature
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/humidity:
+        topic: stuwilkins/feeds/weather.humidity
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/pressure:
+        topic: stuwilkins/feeds/weather.pressure
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/wind_speed_2m:
+        topic: stuwilkins/feeds/weather.wind_speed
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/wind_direction_2m:
+        topic: stuwilkins/feeds/weather.wind_direction
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/ir_light:
+        topic: stuwilkins/feeds/weather.ir_light
+        factor: 1
+        type: '>i'
+        update period: 600
+    myhome/weather/vis_light:
+        topic: stuwilkins/feeds/weather.vis_light
+        factor: 1
+        type: '>i'
+        update period: 600
+    myhome/weather/uv_index:
+        topic: stuwilkins/feeds/weather.uv_index
+        factor: 1
+        factor: 100
+        type: '>i'
+        update period: 600
+    myhome/weather/rain_hour:
+        topic: stuwilkins/feeds/weather.rain_hour
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/rain_day:
+        topic: stuwilkins/feeds/weather.rain_day
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/pool/water_temp:
+        topic: stuwilkins/feeds/pool.water_temp
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/pool/error_status:
+        topic: stuwilkins/feeds/pool.error_status
+        type: B
+        update period: 600
+    myhome/pool/pump_speed:
+        topic: stuwilkins/feeds/pool.pump_speed
+        type: '>h'
+        update period: 600
+    myhome/pool/uv_index:
+        topic: stuwilkins/feeds/pool.uv_index
+        factor: 100
+        type: '>h'
+        update period: 600
+    myhome/pool/ir_light:
+        topic: stuwilkins/feeds/pool.ir_light
+        type: '>h'
+        update period: 600
+    myhome/pool/visible_light:
+        topic: stuwilkins/feeds/pool.visible_light
+        type: '>h'
+        update period: 600
+    myhome/pool/flow_switch:
+        topic: stuwilkins/feeds/pool.flow_switch
+        type: B
+        update period: 600
+    myhome/pool/water_level:
+        topic: stuwilkins/feeds/pool.water_level
+        factor: 100000
+        type: '>i'
+        update period: 600
