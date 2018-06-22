@@ -17,13 +17,6 @@ config_files = ['config/keen_setup.yaml',
                 'config/adafruit_setup.yaml',
                 'config/wunderground.yaml']
 
-scripts = ['scripts/mqtt_broker',
-           'scripts/keen_broker',
-           'scripts/set_bt_time',
-           'scripts/pool_controller',
-           'scripts/adafruit_broker',
-           'scripts/wunderground']
-
 setup(name='BTLE Broker',
       version='0.1.0',
       description='Broker for MQTT and BTLE',
@@ -35,7 +28,8 @@ setup(name='BTLE Broker',
               'adafruit_broker=BTLEBroker.cmdline:adafruit_broker_main',
               'keen_broker=BTLEBroker.cmdline:keen_broker_main',
               'mqtt_broker=BTLEBroker.cmdline:mqtt_broker_main',
-              'wunderground=BTLEBroker.cmdline:wunderground_main']
+              'wunderground=BTLEBroker.cmdline:wunderground_main',
+              'set_bt_time=BTLEBroker.cmdline:set_bt_time_main']
       },
       data_files=[('/etc/systemd/system', service_files),
                   ('/etc/BTLEBroker', config_files)],

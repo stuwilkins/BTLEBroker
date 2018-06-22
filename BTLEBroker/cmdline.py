@@ -37,3 +37,12 @@ def adafruit_broker_main():
     (options, args) = parser.parse_args()
     cfg = config.read_config((options.config_file, options.auth_file))
     adafruit_broker.main(cfg)
+
+
+def set_bt_time_main():
+    from BTLEBroker import settime
+    parser = OptionParser()
+    parser.add_option("-m", "--mac", dest="ctrl_mac",
+                    help="Controller MAC address", metavar="MAC ADDRESS")
+    (options, args) = parser.parse_args()
+    settime.settime(options.ctrl_mac)
