@@ -53,4 +53,4 @@ config:
     factor: 100
     update period: 0
     wu_field: UV
-url: https://rtupdate.wunderground.com/weatherstation/updateweatherstation.php
+url: https://weatherstation.wunderground.com/weatherstation/updateweatherstation.php    

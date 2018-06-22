@@ -44,9 +44,7 @@ def update_wunderground(data, update, delay):
             wu_data[_data['wu_field']] = '{0:.2f}'.format((_data['value']))
 
     wu_header = {"action": "updateraw",
-                 "dateutc": "now",
-                 "realtime": "1",
-                 "rtfreq": "2.5"}
+                 "dateutc": "now"}
 
     wu_data = {**wu_data, **wu_header, **data['wunderground']}
 

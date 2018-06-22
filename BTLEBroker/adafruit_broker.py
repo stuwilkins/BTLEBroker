@@ -56,5 +56,4 @@ def main(config):
     config['client_in'] = client_in
     config['client_out'] = client_out
 
-
     client_in.loop_forever()
