@@ -9,12 +9,14 @@ service_files = ['config/pool_controller.service',
                  'config/weather_station.service',
                  'config/keen.service',
                  'config/adafruit.service',
+                 'config/thingsboard.service',
                  'config/wunderground.service']
 
 config_files = ['config/keen_setup.yaml',
                 'config/bluetooth_setup.yaml',
                 'config/auth.yaml',
                 'config/adafruit_setup.yaml',
+                'config/thingsboard_setup.yaml',
                 'config/wunderground.yaml']
 
 setup(name='BTLE Broker',
@@ -26,6 +28,7 @@ setup(name='BTLE Broker',
       entry_points = {
           'console_scripts': [
               'adafruit_broker=BTLEBroker.cmdline:adafruit_broker_main',
+              'thingsboard_broker=BTLEBroker.cmdline:thingsboard_broker_main',
               'keen_broker=BTLEBroker.cmdline:keen_broker_main',
               'mqtt_broker=BTLEBroker.cmdline:mqtt_broker_main',
               'wunderground=BTLEBroker.cmdline:wunderground_main',

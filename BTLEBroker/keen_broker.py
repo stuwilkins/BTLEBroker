@@ -18,9 +18,8 @@ def on_message(client, userdata, msg):
 
     _data['last update'] = time.time()
     _offset = _data.get('time offset', 0)
-    _val = struct.unpack('>q', msg.payload)
-    _meas = _val[0] & 0xFFFFFFFF
-    _timestamp = _val[0] >> 32
+    _timestamp = struct.unpack('>I', msg.payload[0:4])[0]
+    _meas = struct.unpack('>i', msg.payload[4:8])[0]
 
     if 'factor' in _data:
         _meas = float(_meas) / _data['factor']

@@ -1,0 +1,85 @@
+devices:
+    myhome/weather/battery:
+        topic: battery
+        factor: 1000
+        device: weather
+    myhome/weather/temperature:
+        topic: temperature
+        factor: 1000
+        device: weather
+    myhome/weather/humidity:
+        topic: humidity
+        factor: 1000
+        device: weather
+    myhome/weather/pressure:
+        topic: pressure
+        factor: 1000
+        device: weather
+    myhome/weather/wind_speed_2m:
+        topic: wind_speed_2m
+        factor: 1000
+        device: weather
+    myhome/weather/wind_direction_2m:
+        topic: wind_direction_2m
+        factor: 1000
+        device: weather
+    myhome/weather/wind_speed:
+        topic: wind_speed
+        factor: 1000
+        device: weather
+    myhome/weather/wind_direction:
+        topic: wind_direction
+        factor: 1000
+        device: weather
+    myhome/weather/ir_light:
+        topic: ir_light
+        factor: 1
+        device: weather
+    myhome/weather/vis_light:
+        topic: vis_light
+        factor: 1
+        device: weather
+    myhome/weather/uv_index:
+        topic: uv_index
+        factor: 100
+        device: weather
+    myhome/weather/rain_hour:
+        topic: rain_hour
+        factor: 1000
+        device: weather
+    myhome/weather/rain_day:
+        topic: rain_day
+        factor: 1000
+        device: weather
+    myhome/pool/water_temp:
+        topic: water_temp
+        factor: 1000
+        device: pool
+    myhome/pool/error_status:
+        topic: error_status
+        factor: 1
+        device: pool
+    myhome/pool/pump_speed:
+        topic: pump_speed
+        factor: 1
+        device: pool
+    myhome/pool/uv_index:
+        topic: uv_index
+        factor: 100
+        device: pool
+    myhome/pool/ir_light:
+        topic: ir_light
+        factor: 1000
+        device: pool
+    myhome/pool/visible_light:
+        topic: visible_light
+        factor: 1000
+        device: pool
+    myhome/pool/flow_switch:
+        topic: flow_switch
+        factor: 1
+        device: pool
+    myhome/pool/water_level:
+        topic: water_level
+        factor: 100000
+        device: pool

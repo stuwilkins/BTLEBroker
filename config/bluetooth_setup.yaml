@@ -9,6 +9,9 @@ clients:
                     Battery:
                         UUID: 00001001-0000-1000-8000-00805f9b34fb
                         mqtt_topic: 'myhome/weather/battery'
+                    Battery SOC:
+                        UUID: 00001022-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/battery_soc'
                     Temperature:
                         UUID: 00001002-0000-1000-8000-00805f9b34fb
                         mqtt_topic: 'myhome/weather/temperature'
@@ -60,6 +63,24 @@ clients:
                     Wind Direction 10m gust:
                         UUID: 00001019-0000-1000-8000-00805f9b34fb
                         mqtt_topic: 'myhome/weather/wind_direction_gust_10m'
+                    Solar Voltage:
+                        UUID: 00001020-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/solar_voltage'
+                    Solar Current:
+                        UUID: 00001021-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/solar_current'
+                    Lightning Distance:
+                        UUID: 00001023-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/lightning_distance'
+                    Lightning Energy:
+                        UUID: 00001024-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/lightning_energy'
+                    Input Voltage:
+                        UUID: 00001025-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/input_voltage'
+                    Status:
+                        UUID: 00001026-0000-1000-8000-00805f9b34fb
+                        mqtt_topic: 'myhome/weather/status'
 
     Pool Controller:
         address: 'C1:49:4B:B4:61:17'

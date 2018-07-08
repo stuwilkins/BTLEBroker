@@ -39,6 +39,13 @@ def adafruit_broker_main():
     adafruit_broker.main(cfg)
 
 
+def thingsboard_broker_main():
+    from BTLEBroker import thingsboard_broker
+    (options, args) = parser.parse_args()
+    cfg = config.read_config((options.config_file, options.auth_file))
+    thingsboard_broker.main(cfg)
+
+
 def set_bt_time_main():
     from BTLEBroker import settime
     parser = OptionParser()

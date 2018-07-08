@@ -1,9 +1,50 @@
 devices:
+    myhome/weather/input_voltage:
+        ev_name: 'input_voltage'
+        ev_collection: 'Weather'
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/status:
+        ev_name: 'status'
+        ev_collection: 'Weather'
+        factor: 1
+        type: '>i'
+        update period: 600
+    myhome/weather/solar_voltage:
+        ev_name: 'solar_voltage'
+        ev_collection: 'Weather'
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/solar_current:
+        ev_name: 'solar_current'
+        ev_collection: 'Weather'
+        factor: 1000
+        type: '>i'
+        update period: 600
+    myhome/weather/lightning_distance:
+        ev_name: 'lightning_distance'
+        ev_collection: 'Weather'
+        factor: 1
+        type: '>i'
+        update period: 600
+    myhome/weather/lightning_energy:
+        ev_name: 'lightning_energy'
+        ev_collection: 'Weather'
+        factor: 1
+        type: '>i'
+        update period: 600
     myhome/weather/battery:
         ev_name: 'battery'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
+        update period: 600
+    myhome/weather/battery_soc:
+        ev_name: 'battery_soc'
+        factor: 1000
+        ev_collection: 'Weather'
         update period: 600
     myhome/weather/temperature:
         ev_name: 'temperature'
