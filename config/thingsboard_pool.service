@@ -1,0 +1,13 @@
+[Unit]
+Description=MQTT to Thingsboard IO Bridge for Pool Out
+After=network.target
+Requires=network.target
+ 
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/thingsboard_broker_out --config /etc/BTLEBroker/thingsboard_setup.yaml --auth /etc/BTLEBroker/auth.yaml --name "Pool Controller"
+Restart=always
+StandardOutput=null
+ 
+[Install]
+WantedBy=multi-user.target

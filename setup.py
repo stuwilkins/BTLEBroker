@@ -5,17 +5,15 @@ from setuptools import setup
 with open('requirements.txt') as f:
         requirements = f.read().splitlines()
 
-service_files = ['config/pool_controller.service',
-                 'config/weather_station.service',
-                 'config/keen.service',
-                 'config/adafruit.service',
+service_files = ['config/keen.service',
                  'config/thingsboard.service',
+                 'config/thingsboard_pool.service',
                  'config/wunderground.service']
 
 config_files = ['config/keen_setup.yaml',
                 'config/bluetooth_setup.yaml',
                 'config/auth.yaml',
-                'config/adafruit_setup.yaml',
+                'config/neurio.yaml',
                 'config/thingsboard_setup.yaml',
                 'config/wunderground.yaml']
 
@@ -28,7 +26,9 @@ setup(name='BTLE Broker',
       entry_points = {
           'console_scripts': [
               'adafruit_broker=BTLEBroker.cmdline:adafruit_broker_main',
+              'neurio_broker=BTLEBroker.cmdline:neurio_broker_main',
               'thingsboard_broker=BTLEBroker.cmdline:thingsboard_broker_main',
+              'thingsboard_broker_out=BTLEBroker.cmdline:thingsboard_broker_out_main',
               'keen_broker=BTLEBroker.cmdline:keen_broker_main',
               'mqtt_broker=BTLEBroker.cmdline:mqtt_broker_main',
               'wunderground=BTLEBroker.cmdline:wunderground_main',

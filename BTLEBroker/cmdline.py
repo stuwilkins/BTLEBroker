@@ -32,6 +32,13 @@ def wunderground_main():
     wunderground.main(cfg)
 
 
+def neurio_broker_main():
+    from BTLEBroker import neurio
+    (options, args) = parser.parse_args()
+    cfg = config.read_config((options.config_file, options.auth_file))
+    neurio.main(cfg)
+
+
 def adafruit_broker_main():
     from BTLEBroker import adafruit_broker
     (options, args) = parser.parse_args()
@@ -44,6 +51,15 @@ def thingsboard_broker_main():
     (options, args) = parser.parse_args()
     cfg = config.read_config((options.config_file, options.auth_file))
     thingsboard_broker.main(cfg)
+
+
+def thingsboard_broker_out_main():
+    from BTLEBroker import thingsboard_broker_out
+    parser.add_option("-n", "--name", dest="name",
+                    help="Name of device in yaml file", metavar="FILE")
+    (options, args) = parser.parse_args()
+    cfg = config.read_config((options.config_file, options.auth_file))
+    thingsboard_broker_out.main(cfg, options.name)
 
 
 def set_bt_time_main():

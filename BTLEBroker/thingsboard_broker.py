@@ -8,7 +8,7 @@ import paho.mqtt.client as mqtt
 
 
 def on_message(client_in, userdata, msg):
-    _data = userdata['devices'][msg.topic]
+    _data = userdata['devices out'][msg.topic]
 
     if 'update period' in _data:
         if 'last update' in _data:
@@ -45,7 +45,7 @@ def on_message(client_in, userdata, msg):
 
 def on_connect(client_in, userdata, flags, rc):
     print("Connected with result code "+str(rc))
-    for topic, data in userdata['devices'].items():
+    for topic, data in userdata['devices out'].items():
         client_in.subscribe(topic, qos=1)
         print("Subscribing to topic {}".format(topic))
 

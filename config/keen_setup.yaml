@@ -1,179 +1,179 @@
 devices:
-    myhome/weather/input_voltage:
+    homeauto/weather/input_voltage:
         ev_name: 'input_voltage'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/status:
+    homeauto/weather/status:
         ev_name: 'status'
         ev_collection: 'Weather'
         factor: 1
         type: '>i'
         update period: 600
-    myhome/weather/solar_voltage:
+    homeauto/weather/solar_voltage:
         ev_name: 'solar_voltage'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/solar_current:
+    homeauto/weather/solar_current:
         ev_name: 'solar_current'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/lightning_distance:
+    homeauto/weather/lightning_distance:
         ev_name: 'lightning_distance'
         ev_collection: 'Weather'
         factor: 1
         type: '>i'
         update period: 600
-    myhome/weather/lightning_energy:
+    homeauto/weather/lightning_energy:
         ev_name: 'lightning_energy'
         ev_collection: 'Weather'
         factor: 1
         type: '>i'
         update period: 600
-    myhome/weather/battery:
+    homeauto/weather/battery:
         ev_name: 'battery'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/battery_soc:
+    homeauto/weather/battery_soc:
         ev_name: 'battery_soc'
         factor: 1000
         ev_collection: 'Weather'
         update period: 600
-    myhome/weather/temperature:
+    homeauto/weather/temperature:
         ev_name: 'temperature'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/humidity:
+    homeauto/weather/humidity:
         ev_name: 'humidity'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/pressure:
+    homeauto/weather/pressure:
         ev_name: 'pressure'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/wind_speed:
+    homeauto/weather/wind_speed:
         ev_name: 'wind_speed'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/wind_direction:
+    homeauto/weather/wind_direction:
         ev_name: 'wind_direction'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/ir_light:
+    homeauto/weather/ir_light:
         ev_name: 'ir_light'
         ev_collection: 'Weather'
         factor: 1
         type: '>i'
         update period: 600
-    myhome/weather/vis_light:
+    homeauto/weather/vis_light:
         ev_name: 'vis_light'
         ev_collection: 'Weather'
         factor: 1
         type: '>i'
         update period: 600
-    myhome/weather/uv_index:
+    homeauto/weather/uv_index:
         ev_name: 'uv_index'
         ev_collection: 'Weather'
         factor: 100
         type: '>i'
         update period: 600
-    myhome/weather/rain_hour:
+    homeauto/weather/rain_hour:
         ev_name: 'rain_hour'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/rain_day:
+    homeauto/weather/rain_day:
         ev_name: 'rain_day'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/wind_speed_2m:
+    homeauto/weather/wind_speed_2m:
         ev_name: 'wind_speed_2m'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/weather/wind_direction_2m:
+    homeauto/weather/wind_direction_2m:
         ev_name: 'wind_direction_2m'
         ev_collection: 'Weather'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/pool/water_temp:
+    homeauto/pool/water_temp:
         ev_name: 'pool_water_temp'
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/pool/humidity:
+    homeauto/pool/humidity:
         ev_name: 'air_humidity'
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/pool/air_temp:
+    homeauto/pool/air_temp:
         ev_name: air_temp
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/pool/error_status:
+    homeauto/pool/error:
         ev_name: error_status
         ev_collection: 'Home_Temp_Logging'
         type: B
         update period: 600
-    myhome/pool/ir_light:
+    homeauto/pool/ir_light:
         ev_name: ir_light
         ev_collection: 'Home_Temp_Logging'
         type: '>h'
         update period: 600
-    myhome/pool/water_temp:
+    homeauto/pool/water_temp:
         ev_name: pool_water_temp
         ev_collection: 'Home_Temp_Logging'
         factor: 1000
         type: '>i'
         update period: 600
-    myhome/pool/pump_speed:
+    homeauto/pool/pump_speed:
         ev_name: pump_speed
         ev_collection: 'Home_Temp_Logging'
         type: '>h'
         update period: 600
-    myhome/pool/uv_index:
+    homeauto/pool/uv_index:
         ev_name: UV_index
         ev_collection: 'Home_Temp_Logging'
         factor: 100
         type: '>h'
         update period: 600
-    myhome/pool/visible_light:
+    homeauto/pool/vis_light:
         ev_name: visible_light
         ev_collection: 'Home_Temp_Logging'
         type: '>h'
         update period: 600
-    myhome/pool/flow_switch:
+    homeauto/pool/flow_switch:
         ev_name: flow
         ev_collection: 'Home_Temp_Logging'
         type: B
         update period: 600
-    myhome/pool/water_level:
+    homeauto/pool/water_level:
         ev_name: water_level
         ev_collection: 'Home_Temp_Logging'
         factor: 100000
