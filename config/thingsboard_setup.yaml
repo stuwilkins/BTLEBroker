@@ -1,96 +1,163 @@
 devices out:
+    homeauto/weather/solar_voltage:
+        topic: solar_voltage
+        factor: 1000
+        device: weather
+        update period: 10
+    homeauto/weather/solar_current:
+        topic: solar_current
+        factor: 1000
+        device: weather
+        update period: 10
+    homeauto/weather/status:
+        topic: charge_state
+        enum:
+            0 : 'OFF'
+            1 : 'CHARGING'
+            2 : 'DONE'
+            3 : 'ERROR'
+        device: weather
+        update period: 10
     homeauto/weather/battery:
         topic: battery
         factor: 1000
         device: weather
+        update period: 10
+    homeauto/weather/battery_soc:
+        topic: battery_soc
+        factor: 1000
+        device: weather
+        update period: 10
+    homeauto/weather/input_voltage:
+        topic: input_voltage
+        factor: 1000
+        device: weather
+        update period: 10
     homeauto/weather/temperature:
         topic: temperature
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/humidity:
         topic: humidity
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/pressure:
         topic: pressure
         factor: 1000
         device: weather
+        update period: 10
+    homeauto/weather/dew_point:
+        topic: dew_point
+        factor: 1000
+        device: weather
+        update period: 10
     homeauto/weather/wind_speed_2m:
         topic: wind_speed_2m
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/wind_direction_2m:
         topic: wind_direction_2m
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/wind_speed:
         topic: wind_speed
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/wind_direction:
         topic: wind_direction
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/ir_light:
         topic: ir_light
         factor: 1
         device: weather
+        update period: 10
     homeauto/weather/vis_light:
         topic: vis_light
         factor: 1
+        update period: 10
         device: weather
     homeauto/weather/uv_index:
         topic: uv_index
         factor: 100
         device: weather
+        update period: 10
     homeauto/weather/rain_hour:
         topic: rain_hour
         factor: 1000
         device: weather
+        update period: 10
     homeauto/weather/rain_day:
         topic: rain_day
         factor: 1000
         device: weather
+        update period: 10
     homeauto/pool/water_temp:
         topic: water_temp
         factor: 1000
         device: pool
+        update period: 10
     homeauto/pool/air_temp:
         topic: air_temp
         factor: 1000
         device: pool
+        update period: 10
     homeauto/pool/air_humidity:
         topic: air_humidity
         factor: 1000
         device: pool
+        update period: 10
     homeauto/pool/error:
         topic: error_status
         factor: 1
         device: pool
+        update period: 10
     homeauto/pool/pump_speed:
         topic: pump_speed
         factor: 1
         device: pool
+        update period: 10
     homeauto/pool/uv_index:
         topic: uv_index
         factor: 100
         device: pool
+        update period: 10
     homeauto/pool/ir_light:
         topic: ir_light
         factor: 1000
         device: pool
+        update period: 10
     homeauto/pool/vis_light:
         topic: visible_light
         factor: 1000
         device: pool
+        update period: 10
     homeauto/pool/flow_switch:
         topic: flow_switch
         factor: 1
         device: pool
+        update period: 10
+    homeauto/pool/pump_flow:
+        topic: pump_flow
+        factor: 1000
+        device: pool
+        update period: 10
     homeauto/pool/water_level:
         topic: water_level
         factor: 100000
         device: pool
+        update period: 10
+    homeauto/pool/pump_pressure:
+        topic: pump_pressure
+        factor: 10000
+        device: pool
+        update period: 10
 
 devices in:
     Pool Controller:

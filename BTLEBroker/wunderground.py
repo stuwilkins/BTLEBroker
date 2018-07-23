@@ -39,9 +39,11 @@ def on_message(client, userdata, msg):
 def update_wunderground(data, update, delay):
     wu_data = dict()
     for _name, _data in data['config'].items():
-        diff = datetime.datetime.now().timestamp() - _data['timestamp']
-        if((diff < delay) or (diff < (delay + 4*60*60))):
-            wu_data[_data['wu_field']] = '{0:.2f}'.format((_data['value']))
+        if 'timestamp' in _data:
+            diff = datetime.datetime.now().timestamp() - _data['timestamp']
+            print(diff)
+            if((diff < delay) or (diff < (delay + 4*60*60))):
+                wu_data[_data['wu_field']] = '{0:.2f}'.format((_data['value']))
 
     wu_header = {"action": "updateraw",
                  "dateutc": "now"}
@@ -71,5 +73,5 @@ def main(config):
 
     client.loop_start()
     while(1):
-        time.sleep(2.5)
+        time.sleep(30)
         update_wunderground(config, True, 240)

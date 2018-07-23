@@ -18,15 +18,16 @@ def on_message(client_in, userdata, msg):
 
     _data['last update'] = time.time()
     _offset = _data.get('time offset', 0)
-    _val = struct.unpack('>q', msg.payload)
-    _meas = _val[0] & 0xFFFFFFFF
-    _timestamp = _val[0] >> 32
+    _timestamp = struct.unpack('>l', msg.payload[0:4])[0]
+    _meas = struct.unpack('>l', msg.payload[4:])[0]
 
     if 'factor' in _data:
         _meas = float(_meas) / _data['factor']
+    if 'enum' in _data:
+        _meas = _data['enum'][_meas]
 
-    #print('Topic {} has value {} at timestamp {}'.format(msg.topic, _meas,
-    #                                                     hex(_timestamp)))
+    print('Topic {} has value {} at timestamp {}'.format(msg.topic, _meas,
+                                                         hex(_timestamp)))
 
     url = userdata['thingsboard']['url'] + "/api/v1/"
     url += userdata['thingsboard']['token'][_data['device']]
